@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catanocracy</title>
+  <meta name="description" content="Play Settlers of Catan for Free in this open-sourced platform.">
+  <meta property="og:title" content="Catanocracy">
+  <meta property="og:description" content="Play Settlers of Catan for Free in this open-sourced platform.">
+  <meta property="og:image" content="https://bharathraja.in/catan/images/game-screenshot.png">
+  <meta property="og:url" content="https://catan-qvig.onrender.com/">
+  <link rel="stylesheet" href="/css/waiting_room.css">
+  <link rel="shortcut icon" type="image/jpg" href="/images/favicon.png" />
+</head>
+<div id="waiting-room">
+  <div class="title">
+    <div class="colored">
+      <div class="name">Game Key</div>
+      <div class="text">
+        <span>{{ game_id }}</span>
+          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 9h3a3 3 0 013 3v6a3 3 0 01-3 3h-6a3 3 0 01-3-3v-3m6-6h-3a3 3 0 00-3 3v3m6-6V6a3 3 0 00-3-3H6a3 3 0 00-3 3v6a3 3 0 003 3h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+    <small>Waiting for <span class="p-count">0</span> more players to join...</small>
+  </div>
+  <div class="players">
+    <div class="player-1"></div>
+    <div class="player-2"></div>
+    <div class="player-3 hide"></div>
+    <div class="player-4 hide"></div>
+  </div>
+</div>
+<div id="game"><div class="accessibility-zone"></div></div>
+
+<script>
+  window.game_id = "{{ game_id }}";
+  window.players = {{{ players }}};
+  window.player_count = {{ player_count }};
+</script>
+<script src="/socket.io/socket.io.min.js"></script>
+<script src="/js/waiting_room.js" type="module"></script>

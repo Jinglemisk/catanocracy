@@ -1,0 +1,68 @@
+/* Solo launcher and tools are isolated from the normal multiplayer controls. */
+#login > .container .action-types { margin-inline: 15px; }
+#login > .container .action-types > label,
+#login > .container .action-types > label:first-child { width: 25%; padding-inline: 8px; box-sizing: border-box; }
+#login > .container .action-types:has(input[value="solo"]:checked) + .action-container .host-section { margin-left: -300%; }
+#login .solo-section { color: #281c10; background: #f4e8cdd9; font-family: Raleway, sans-serif; }
+#login .solo-section h1 { margin: 0; font-size: 1.6rem; font-family: EagleLake, serif; }
+#login .solo-section p { line-height: 1.5; margin: 14px 0; }
+#login .solo-section > label { display: grid; gap: 7px; width: 100%; margin-top: 12px; font-weight: bold; }
+#login .solo-section select { box-sizing: border-box; width: 100%; padding: 11px; border: 1px solid #8f7959; border-radius: 5px; background: #fffc; font: inherit; color: inherit; }
+#login .solo-section .solo-note { font-size: .85rem; }
+#login .solo-section .submit { word-spacing: normal; }
+
+#game > .accessibility-zone .playtest-open {
+  background: #d93636; border-color: #ffb3a6; color: #fff; opacity: 1;
+  align-items: center; font-size: 19px; line-height: 1; box-shadow: 0 2px 5px #0004;
+}
+#game > .accessibility-zone .playtest-open:is(:hover, :focus-visible) { background: #ae2424; }
+.playtest-panel { font-family: Raleway, sans-serif; color: #281c10; box-sizing: border-box; }
+.playtest-panel button { display: inline-block; background: #3b3022; color: #fff8e8; border: 1px solid #3b3022; border-radius: 5px; font: 600 13px Raleway, sans-serif; padding: 9px 12px; cursor: pointer; }
+.playtest-panel button:hover { background: #59462e; }
+.playtest-panel :is(button, input, select):focus-visible,
+#game.hotseat-game .all-players .player:focus-visible { outline: 3px solid #152ca5; outline-offset: 3px; }
+.playtest-panel button:disabled { opacity: .5; cursor: default; }
+.playtest-toolbar-error { position: fixed; left: 85px; top: 300px; z-index: 65; max-width: 260px; padding: 12px; border: 1px solid #b15d4a; border-radius: 5px; background: #ffe3d9; color: #7d2114; font: 13px/1.5 Raleway, sans-serif; }
+#game.hotseat-game .all-players .player { cursor: pointer; }
+#game.hotseat-game .all-players .player.playtest-controlled { box-shadow: inset 5px 0 #fff; }
+.playtest-seat-badge { display: block; padding: 3px 12px 5px; font: 600 11px Raleway, sans-serif; color: #252018; }
+.playtest-controlled .playtest-seat-badge { background: #fff9; }
+
+.playtest-panel { width: min(540px, calc(100vw - 28px)); max-height: calc(100dvh - 32px); padding: 24px; border: 1px solid #8f7959; border-radius: 12px; background: #f7edda; box-shadow: 0 12px 70px #0006; overflow-y: auto; }
+.playtest-panel::backdrop { background: #07192399; backdrop-filter: blur(3px); }
+.playtest-panel header { display: flex; justify-content: space-between; align-items: center; }
+.playtest-eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: .15em; color: #765730; }
+.playtest-panel h2 { margin: 3px 0 0; font: 24px EagleLake, serif; }
+.playtest-panel h3 { font-size: 16px; margin: 0 0 16px; }
+.playtest-panel button.playtest-close { background: transparent; border-color: transparent; color: #463721; font-size: 26px; padding: 0 10px; }
+.playtest-panel-status { line-height: 1.6; font-size: 12px; margin: 16px 0 20px; }
+.playtest-panel form { border-top: 1px solid #d6c3a1; padding-top: 20px; margin-top: 20px; }
+.playtest-row { display: flex; gap: 12px; }
+.playtest-panel label { display: grid; flex: 1; gap: 7px; min-width: 0; font-size: 12px; font-weight: 600; }
+.playtest-panel :is(select, input) { min-width: 0; width: 100%; box-sizing: border-box; padding: 10px 8px; font: 14px Raleway, sans-serif; border: 1px solid #b29b74; border-radius: 4px; background: #fffaf0; color: #281c10; }
+.playtest-panel [name="playerCount"] { min-width: 75px; }
+.playtest-scenario-form .playtest-row label:first-child { flex: 3; }
+.playtest-scenario-description { font-size: 13px; line-height: 1.5; }
+.playtest-hint,
+.playtest-hand-summary { font-size: 12px; line-height: 1.6; color: #695839; }
+.playtest-panel > .playtest-hint { margin-bottom: 0; margin-top: 22px; }
+.playtest-resources { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 16px 0; }
+.playtest-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.playtest-panel button.secondary { background: transparent; color: #453522; border-color: #a68d65; }
+.playtest-panel button.secondary:hover { background: #e9d7b6; }
+.playtest-error { padding: 10px; border: 1px solid #b15d4a; border-radius: 5px; background: #ffe3d9; color: #7d2114; font-size: 13px; line-height: 1.5; }
+
+@media (max-width: 640px) {
+  #login > .container { width: min(400px, calc(100vw - 24px)); }
+  #login > .container .action-container .section { padding: 28px 24px; }
+  #game.hotseat-game > .all-players { top: 10px; width: 168px; }
+  #game.hotseat-game > .all-players .name { font-size: 1.2em; line-height: 1.2; padding: 5px 8px; }
+  #game.hotseat-game > .all-players .victory-points { font-size: 1.3em; line-height: 1.2; }
+  #game.hotseat-game > .all-players .cards-container { padding: 3px 7px; }
+  #game.hotseat-game > .all-players :is(.resources, .development-cards, .largest-army, .longest-road) { height: 32px; }
+  #game.hotseat-game > .all-players :is(.resources, .development-cards, .largest-army, .longest-road)::after { font-size: 11px; padding: 1px 3px; }
+  #game.hotseat-game > .all-players .player::before { font-size: 2em; left: -38px; }
+  #game.hotseat-game > .accessibility-zone { top: 0; }
+  .playtest-panel { padding: 20px 16px; }
+  .playtest-resources { grid-template-columns: repeat(3, 1fr); }
+}

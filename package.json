@@ -1,0 +1,36 @@
+{
+  "name": "catanocracy",
+  "version": "1.0.0",
+  "description": "Configurable Catan with a planned Hegemony-style Assembly",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js -w index.js -w views -w models -e js,html",
+    "deploy-shuffler": "sh ./deploy-gh-pages.sh",
+    "dev-static": "sh ./dev-static-pages.sh",
+    "test": "node --test tests/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jinglemisk/catanocracy.git"
+  },
+  "author": "bigomega",
+  "contributors": ["Cengiz (Jinglemisk)"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jinglemisk/catanocracy/issues"
+  },
+  "homepage": "https://github.com/Jinglemisk/catanocracy#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "mustache-express": "^1.3.2",
+    "nodemon": "^3.0.3",
+    "push-dir": "^0.4.1",
+    "random-words": "^2.0.1",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "light-server": "^2.9.1"
+  }
+}

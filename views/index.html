@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catanocracy</title>
+  <meta name="description" content="Play Settlers of Catan for Free in this open-sourced platform.">
+  <meta property="og:title" content="Catanocracy">
+  <meta property="og:description" content="Play Settlers of Catan for Free in this open-sourced platform.">
+  <meta property="og:image" content="https://bharathraja.in/catan/images/game-screenshot.png">
+  <meta property="og:url" content="https://catan-qvig.onrender.com/">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/playtest.css">
+  <link rel="stylesheet" href="/css/index/game-hud.css">
+  <link rel="shortcut icon" type="image/jpg" href="/images/favicon.png" />
+</head>
+<div class="splash"></div>
+<div id="game">
+  <div class="board-container">
+    <div class="board"></div>
+  </div>
+  <div class="resource-animation-zone"></div>
+  <div class="all-players"></div>
+  <div class="current-player">
+    <div class="hand"></div>
+    <div class="actions"></div>
+    <div class="status-bar"></div>
+    <div class="status-bar-history" title="Status History (h)"></div>
+  </div>
+  <div class="trade-zone">
+    <div class="trade-requests"></div>
+    <div class="trade-type-selection hide"></div>
+    <div class="trade-card-selection hide"></div>
+  </div>
+  <div class="robber-drop-zone">
+    <div class="card-area"></div>
+    <div class="drop-actions">
+      <div class="drop-emoji">🥷</div>
+      <div class="dropped-count" data-count="0"></div>
+      <div class="drop-give-button">Let Go!</div>
+    </div>
+  </div>
+  <div class="resouce-selection-zone hide"></div>
+  <aside class="status-history-zone" id="game-log" aria-label="Game log">
+    <div class="header">
+      <span class="title history-title">Game log</span>
+      <span class="title dice-stats-title">Dice Stats 🎲</span>
+      <button class="view-toggle" title="Switch to Dice Stats">
+        <span class="history-title">Dice stats</span>
+        <span class="dice-stats-title">Game log</span>
+      </button>
+    </div>
+    <button class="close" aria-label="Hide game log">×</button>
+    <p class="log-perspective"></p>
+    <div class="container" role="log" aria-live="polite" aria-relevant="additions text"></div>
+    <div class="dice-stats"></div>
+  </aside>
+  <div class="card-preview-zone hide">
+    <button class="close" title="`">𝖷</button>
+    <div class="card-container">
+      <div class="card">
+        <div class="card-front"></div>
+        <div class="card-back"></div>
+      </div>
+    </div>
+    <button class="activate hide">Activate</button>
+    <div class="info hide">→ You can only activate one Development card per turn.
+      <br>→ You can not play the card you just bought this turn.
+    </div>
+  </div>
+  <div class="animation-zone"></div>
+  <div class="alert" role="status">
+    <div class="parchment"></div>
+    <div class="text"></div>
+    <button class="close">X</button>
+  </div>
+  <div class="accessibility-zone"></div>
+</div>
+<svg style="width: 0;height: 0;">
+  <filter id="wavy2">
+    <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="1"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" scale="20"></feDisplacementMap>
+  </filter>
+</svg>
+
+<script>
+  window.game_obj = {{{game}}};
+  window.player_obj = {{{player}}};
+  window.opponents_obj = {{{opponents}}};
+</script>
+<script src="/socket.io/socket.io.min.js"></script>
+<script src="/js/index.js" type="module"></script>
